@@ -15,6 +15,27 @@ module.exports = {
         secondary: "#E6D9C9",
         tertiary: "#927963",
       },
+      fontFamily: {
+        title: "Abril Fatface",
+        text: "Lato",
+      },
+      screens: {
+        xs: "425px",
+        ss: "620px",
+        sm: "825px",
+        md: "1024px",
+        lg: "1250px",
+        xl: "1700px",
+      },
+      keyframes: {
+        sidebar: {
+          "0%": { transform: "translateY(50px)", opacity: "0" },
+          "100%%": { transform: "translateY(0px)", opacity: "1" },
+        },
+      },
+      animation: {
+        sidebar: "sidebar 1000ms ease-in-out ",
+      },
     },
   },
   plugins: [],

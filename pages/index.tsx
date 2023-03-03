@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
+import Hero from "@/components/hero/Hero";
+import About from "@/components/about/About";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +14,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
-        <h1>Main Page</h1>
+        <Hero />
+        <About />
       </main>
     </>
   );
