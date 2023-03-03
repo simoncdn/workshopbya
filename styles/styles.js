@@ -13,6 +13,7 @@ const styles = {
 
   flexCenter: "flex justify-center items-center",
   flexStart: "flex justify-center items-start",
+  flexBetween: "flex justify-between items-center",
 
   paddingX: "sm:px-24 px-6",
   paddingY: "sm:py-16 py-6",
