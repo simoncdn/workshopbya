@@ -52,3 +52,30 @@ export const socialMedias = [
     link: "#",
   },
 ];
+
+export const services = [
+  {
+    id: "1",
+    title: "#Brading",
+    description:
+      "Romani canities et nulla cum sunt temporis Romani sint populique canities reverenda licet terrarum populique suscipitur ut canities certamina per et temporis suffragiorum tamen per pacataeque ubique Pompiliani circumspectum domina patrum et per domina canities suffragiorum suscipitur et ubique centuriae verecundum tribus redierit sint canities temporis populique otiosae licet securitas.",
+  },
+  {
+    id: "2",
+    title: "#Stratégie",
+    description:
+      "Romani canities et nulla cum sunt temporis Romani sint populique canities reverenda licet terrarum populique suscipitur ut canities certamina per et temporis suffragiorum tamen per pacataeque ubique Pompiliani circumspectum domina patrum et per domina canities suffragiorum suscipitur et ubique centuriae verecundum tribus redierit sint canities temporis populique otiosae licet securitas.",
+  },
+  {
+    id: "3",
+    title: "#Création",
+    description:
+      "Romani canities et nulla cum sunt temporis Romani sint populique canities reverenda licet terrarum populique suscipitur ut canities certamina per et temporis suffragiorum tamen per pacataeque ubique Pompiliani circumspectum domina patrum et per domina canities suffragiorum suscipitur et ubique centuriae verecundum tribus redierit sint canities temporis populique otiosae licet securitas.",
+  },
+  {
+    id: "4",
+    title: "#Reporting",
+    description:
+      "Romani canities et nulla cum sunt temporis Romani sint populique canities reverenda licet terrarum populique suscipitur ut canities certamina per et temporis suffragiorum tamen per pacataeque ubique Pompiliani circumspectum domina patrum et per domina canities suffragiorum suscipitur et ubique centuriae verecundum tribus redierit sint canities temporis populique otiosae licet securitas.",
+  },
+];
