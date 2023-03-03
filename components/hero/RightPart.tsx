@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import image from "../../assets/alizeeplazen.png";
+import image from "../../assets/photoHero.png";
 
 export default function RightPart() {
   return (
