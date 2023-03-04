@@ -50,8 +50,8 @@ export default function Services() {
             <div
               className={
                 parseInt(service.id) % 2 === 0
-                  ? "col-start-1 col-end-2 "
-                  : "col-start-2 col-end-3 "
+                  ? "col-start-1 col-end-2 flex items-center"
+                  : "col-start-2 col-end-3 flex items-center"
               }
             >
               <Image src={cube} alt="" />
