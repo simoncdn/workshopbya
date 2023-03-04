@@ -26,7 +26,7 @@ export default function Packs() {
 
             <p className="py-4">à partir de {pack.price}€ HT/mois</p>
 
-            <ul className="flex flex-col gap-2 my-5 flex-1 w-[300px] ">
+            <ul className="flex flex-col gap-2 mt-5 mb-10 flex-1 w-[300px] ">
               {pack.description.map((item, index) => (
                 <li
                   key={index}
