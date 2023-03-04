@@ -79,3 +79,43 @@ export const services = [
       "Romani canities et nulla cum sunt temporis Romani sint populique canities reverenda licet terrarum populique suscipitur ut canities certamina per et temporis suffragiorum tamen per pacataeque ubique Pompiliani circumspectum domina patrum et per domina canities suffragiorum suscipitur et ubique centuriae verecundum tribus redierit sint canities temporis populique otiosae licet securitas.",
   },
 ];
+
+export const packs = [
+  {
+    title: "Débutant",
+    price: "200",
+    cardColor: "white",
+    textColor: "primary",
+    description: [
+      "1 post par semaine",
+      "2 stories par semaine",
+      "Création d'un grid planner et preset sur mesure pour avoir un feed harmonieux",
+    ],
+  },
+  {
+    title: "Basic",
+    price: "400",
+    cardColor: "secondary",
+    textColor: "primary",
+    description: [
+      "2 posts par semaine",
+      "4 stories par semaine",
+      "Création d'un grid planner et preset sur mesure pour avoir un feed harmonieux",
+      "Création d'un calendrier éditorial",
+    ],
+  },
+  {
+    title: "Business",
+    price: "600",
+    cardColor: "tertiary",
+    textColor: "white",
+    description: [
+      "1 post par semaine",
+      "2 stories par semaine",
+      "Création d'un grid planner et preset sur mesure pour avoir un feed harmonieux",
+      "Création d'un calendrier éditorial",
+      "Création d'une charte graphique",
+      "Mise en place d'animation (jeu concours...)",
+    ],
+  },
+];
