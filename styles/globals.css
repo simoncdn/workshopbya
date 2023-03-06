@@ -4,9 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  scroll-behavior: smooth;
+@layer base{
+  body{
+    @apply bg-background;
+  }
+  html{
+    @apply scroll-smooth;
+  }
 }
-body{
-  background: #F6F3EC;
+
+.description{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
