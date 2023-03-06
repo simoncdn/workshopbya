@@ -14,9 +14,8 @@ export default function LeftPart() {
       </h1>
       <h3 className={`${styles.heading3} pt-4 pb-6 `}>Alizée Plazen</h3>
       <p className={`${styles.paragraph} sm:pt-4 pt-0`}>
-        Besoin de donner vie à votre marque ? <br /> Une community manager
-        passionnée pour partager votre histoire et libérez votre potentiel sur
-        les réseaux sociaux.
+        Connectez-vous avec votre audience et augmentez votre présence en ligne
+        grâce a mon expertise en gestion de communauté.
       </p>
 
       <Button label="Contactez-moi" route="/#contact" />
