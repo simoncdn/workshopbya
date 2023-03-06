@@ -1,27 +1,25 @@
 import { socialMedias } from "@/constants/constants";
+import styles from "@/styles";
 import Link from "next/link";
 import React from "react";
+import Button from "../reusable-ui/Button";
 
 export default function LeftPart() {
   return (
-    <div className=" sm:w-6/12 pt-10 sm:mt-0 mt-20">
-      <h1 className={` font-title lg:text-[72px] xs:text-[58px] text-[42px] `}>
-        COMMUNITY <br /> MANAGER
+    <div
+      className={`${styles.flexCol} sm:items-start items-center sm:w-6/12  pt-10 sm:mt-0 mt-16`}
+    >
+      <h1 className={`${styles.heading1} flex flex-wrap `}>
+        COMMUNITY MANAGER
       </h1>
-      <h3 className="font-text lg:text-[32px] text-[26px] lg:my-4 my-2">
-        Alizée Plazen
-      </h3>
-      <p className="font-text lg:text-lg sm:text-base text-sm sm:w-[100%] ss:w-[50%] w-[100%] sm:pt-0 pt-4">
+      <h3 className={`${styles.heading3} pt-4 pb-6 `}>Alizée Plazen</h3>
+      <p className={`${styles.paragraph} sm:pt-4 pt-0`}>
         Besoin de donner vie à votre marque ? <br /> Une community manager
         passionnée pour partager votre histoire et libérez votre potentiel sur
         les réseaux sociaux.
       </p>
 
-      <div className="ss:w-fit w-[100%] ss:pt-0 pt-10 flex justify-center ">
-        <button className="text-white lg:text-lg sm:text-base text-sm bg-black py-3 px-6 lg:my-14 my-8">
-          Contactez-moi
-        </button>
-      </div>
+      <Button label="Contactez-moi" route="/#contact" />
 
       <div className="ss:w-fit w-[100%] justify-center flex gap-1 items-start">
         {socialMedias.map((media) => (

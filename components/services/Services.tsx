@@ -1,64 +1,58 @@
 import { services } from "@/constants/constants";
-import styles from "@/styles/styles";
+import styles from "@/styles";
 import Image from "next/image";
 import React from "react";
 import littleEllipse from "../../assets/littleEllipse.svg";
 import cube from "../../assets/serviceBox.svg";
+import SectionTitle from "../reusable-ui/SectionTitle";
 
 export default function Services() {
   return (
-    <div
-      className={`${styles.boxWidth} relative flex  lg:px-20 ss:px-12 px-4 lg:gap-20 sm:gap-10 gap-0 my-[200px] flex-col`}
+    <section
+      className={`${styles.paddingX} ${styles.paddingY} relative flex flex-col`}
     >
-      <div className="flex flex-col">
-        <h2 id="services" className="font-title text-[48px]">
-          Services
-        </h2>
-        <div className="h-[1px] w-[80px] bg-primary mt-6"></div>
-      </div>
+      <SectionTitle title="Services" id="services" />
 
-      <div className="grid grid-cols-2 grid-rows-4 gap-20 mt-20 grid-flow-dense">
+      <div className={`${styles.flexCol} gap-24 mt-20`}>
         {services.map((service) => (
-          <>
+          <div
+            className={`${styles.flexCol}  ${styles.gap} sm:grid grid-cols-2 grid-flow-dense`}
+            key={service.id}
+          >
             <div
-              className={
+              className={` ${
                 parseInt(service.id) % 2 === 0
                   ? "col-start-2 col-end-3"
-                  : "col-start-1  col-end-2"
-              }
+                  : "col-start-1 col-end-2"
+              } ${styles.flexCol} items-center`}
             >
-              <div className="flex items-center gap-4">
-                <div className="relative h-[80px] w-[80px] flex justify-center items-center">
+              <div className="w-full flex justify-center sm:justify-start items-center gap-4">
+                <div className="relative h-[60px] sm:w-[60px] ss:w-[50px] w-[40px] flex justify-center items-center">
                   <Image
                     src={littleEllipse}
                     alt="ellipse"
                     className="absolute w-[100%]"
                   />
-                  <p className="font-title text-[36px] z-20">{service.id}</p>
+                  <p className={`${styles.heading4} z-20`}>{service.id}</p>
                 </div>
-                <h3 className="font-text text-[32px]">{service.title}</h3>
+                <h3 className={`${styles.heading3} `}>{service.title}</h3>
               </div>
-              <p className="text-[20px] font-text mt-[30px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-                praesentium voluptate inventore, sint aspernatur deleniti
-                aperiam nemo dolores qui ex id provident illo fugiat minus ipsa
-                dignissimos sunt unde dolor perferendis minima mollitia ullam!
-                Officia cum natus qui dignissimos et tempora aspernatur
-                distinctio porro! Neque provident ullam expedita odit animi.
+              <p className={`${styles.paragraph} sm:mt-[20px] mt-[10px]`}>
+                {service.description}
               </p>
             </div>
             <div
-              className={
+              className={` ${
                 parseInt(service.id) % 2 === 0
-                  ? "col-start-1 col-end-2 flex items-center"
-                  : "col-start-2 col-end-3 flex items-center"
-              }
+                  ? "col-start-1 col-end-2"
+                  : "col-start-2 col-end-3"
+              } ${styles.flexCenter}`}
             >
               <Image src={cube} alt="" />
             </div>
-          </>
+          </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
