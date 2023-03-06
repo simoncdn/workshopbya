@@ -5,7 +5,7 @@ import {
 } from "react-icons/ai";
 import { FaFacebookF, FaPinterestP } from "react-icons/fa";
 import { GrFacebookOption, GrPinterest } from "react-icons/gr";
-import { RiPinterestLine } from "react-icons/ri";
+import { TbBrandTiktok } from "react-icons/tb";
 import article1 from "../assets/communitymanager.jpg";
 import article2 from "../assets/socialmedia.jpg";
 import article3 from "../assets/cm.jpg";
@@ -42,22 +42,22 @@ export const socialMedias = [
   {
     id: "instagram",
     icon: <AiOutlineInstagram />,
-    link: "#",
+    link: "https://www.instagram.com/workshopbya/",
   },
   {
     id: "facebook",
     icon: <GrFacebookOption />,
-    link: "#",
+    link: "https://www.facebook.com/profile.php?id=100088169302029",
   },
   {
     id: "linkedIn",
     icon: <AiOutlineLinkedin />,
-    link: "#",
+    link: "https://www.linkedin.com/in/alizeeeplazen",
   },
   {
-    id: "pinterest",
-    icon: <RiPinterestLine />,
-    link: "#",
+    id: "linkedIn",
+    icon: <TbBrandTiktok />,
+    link: "https://www.tiktok.com/@workshopbya",
   },
 ];
 
