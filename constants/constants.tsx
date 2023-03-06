@@ -64,27 +64,27 @@ export const socialMedias = [
 export const services = [
   {
     id: "1",
-    title: "#Brading",
+    title: "#Branding",
     description:
-      "Romani canities et nulla cum sunt temporis Romani sint populique canities reverenda licet terrarum populique suscipitur ut canities certamina per et temporis suffragiorum tamen per pacataeque ubique Pompiliani circumspectum domina patrum et per domina canities suffragiorum suscipitur et ubique centuriae verecundum tribus redierit sint canities temporis populique otiosae licet securitas.",
+      "Le branding permet d'identifier les valeurs fondamentales de l'entreprise, de créer une voix de marque et de développer une image visuellement cohérente. En renforçant l'indentité, les clients peuvent être en mesure de se démarquer de leurs concurrents  et d'attirer l'attention de leur public cible.",
   },
   {
     id: "2",
     title: "#Stratégie",
     description:
-      "Romani canities et nulla cum sunt temporis Romani sint populique canities reverenda licet terrarum populique suscipitur ut canities certamina per et temporis suffragiorum tamen per pacataeque ubique Pompiliani circumspectum domina patrum et per domina canities suffragiorum suscipitur et ubique centuriae verecundum tribus redierit sint canities temporis populique otiosae licet securitas.",
+      "La stratégie doit être adaptée aux objectifs de l'entreprise et aux besoins de sa communauté. Elle doit également inclure des élements tels que l'image de la marque, les plateformes sociales à utiliser, la fréquence de publication et les types de contenu à partager.",
   },
   {
     id: "3",
-    title: "#Création",
+    title: "#Création et gestion",
     description:
-      "Romani canities et nulla cum sunt temporis Romani sint populique canities reverenda licet terrarum populique suscipitur ut canities certamina per et temporis suffragiorum tamen per pacataeque ubique Pompiliani circumspectum domina patrum et per domina canities suffragiorum suscipitur et ubique centuriae verecundum tribus redierit sint canities temporis populique otiosae licet securitas.",
+      "Une fois que la stratégie de communication est définie, la prochaine étape consiste à créer et à gérer du contenu de qualité. Cela comprends la création de textes, d'images et de vidéos qui sont pertinents pour la communauté de l'entreprise. La gestion de contenu implique également de veiller à la cohérence et à la qualité du contenu publié.",
   },
   {
     id: "4",
-    title: "#Reporting",
+    title: "#Analyse",
     description:
-      "Romani canities et nulla cum sunt temporis Romani sint populique canities reverenda licet terrarum populique suscipitur ut canities certamina per et temporis suffragiorum tamen per pacataeque ubique Pompiliani circumspectum domina patrum et per domina canities suffragiorum suscipitur et ubique centuriae verecundum tribus redierit sint canities temporis populique otiosae licet securitas.",
+      "Enfin, il est important d'analyser les résultats de la présence en ligne de l'entreprise pour comprendre ce qui fonctionne bien et ce qui peut être amélioré. Cela implique de suivre les indicateurs de performance clés, tels que le taux d'engagement, le nombre de followers, les conversions et le retour sur investissement. L'analyse des résultats permet d'ajuster la stratégie de communication en ligne et les tactiques utilisées pour atteindre les objectifs commerciaux de l'entreprise.",
   },
 ];
 
