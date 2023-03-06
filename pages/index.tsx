@@ -4,10 +4,16 @@ import Hero from "@/components/hero/Hero";
 import About from "@/components/about/About";
 import Services from "@/components/services/Services";
 import Packs from "@/components/packs/Packs";
+import Contact from "@/components/contact/Contact";
+import { useRouter } from "next/router";
+import { HiArrowLongUp } from "react-icons/hi2";
+import Blog from "@/components/blog/Blog";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -20,6 +26,14 @@ export default function Home() {
         <About />
         <Services />
         <Packs />
+        <Blog />
+        <Contact />
+
+        <div className="fixed right-0 bottom-10">
+          <button onClick={() => router.push("/")} className="text-[50px]">
+            <HiArrowLongUp />
+          </button>
+        </div>
       </main>
     </>
   );
