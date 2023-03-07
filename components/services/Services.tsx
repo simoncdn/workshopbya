@@ -13,10 +13,10 @@ export default function Services() {
     >
       <SectionTitle title="Services" id="services" />
 
-      <div className={`${styles.flexCol} gap-24 mt-20`}>
+      <div className={`${styles.flexCol} gap-20 mt-20`}>
         {services.map((service) => (
           <div
-            className={`${styles.flexCol}  ${styles.gap} sm:grid grid-cols-2 grid-flow-dense`}
+            className={`${styles.flexCol} ${styles.gap} sm:grid grid-cols-2 grid-flow-dense`}
             key={service.id}
           >
             <div
@@ -48,7 +48,14 @@ export default function Services() {
                   : "col-start-2 col-end-3"
               } ${styles.flexCenter}`}
             >
-              <Image src={cube} alt="" />
+              <div className={`${styles.flexCenter} relative`}>
+                <Image src={cube} alt="" className="absolute" />
+                <Image
+                  src={service.picture}
+                  alt={service.alt}
+                  className="top-0 right-0 w-[80%] h-[100%] z-10"
+                />
+              </div>
             </div>
           </div>
         ))}

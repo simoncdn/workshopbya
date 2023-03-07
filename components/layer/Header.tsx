@@ -17,8 +17,8 @@ export default function Header() {
       className={`${styles.boxWidth} ${styles.paddingX} ${styles.gap} flex sm:relative fixed z-20`}
     >
       <div className="w-6/12 md:py-6 py-4">
-        <Link href={"/"} className="flex items-center w-fit">
-          <Image src={logo} alt="alt" className="w-[50px]" />
+        <Link href={"/"} className="flex items-center w-fit gap-2">
+          <Image src={logo} alt="alt" className="w-[40px]" />
           <h2 className={`${styles.text} sm:flex hidden `}>Workshop by A</h2>
         </Link>
       </div>

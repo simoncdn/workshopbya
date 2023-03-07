@@ -1,3 +1,4 @@
+import PagesTitle from "@/components/reusable-ui/PagesTitle";
 import SectionTitle from "@/components/reusable-ui/SectionTitle";
 import { articles } from "@/constants/constants";
 import styles from "@/styles";
@@ -21,10 +22,7 @@ export default function Blog() {
           <Image src={ellipse} alt="ellipse" />
         </div>
 
-        <div className="flex flex-col items-center">
-          <h1 className={`${styles.heading1} text-center `}>BLOG</h1>
-          <div className="h-[1px] w-[60px] bg-primary mt-6 mb-12"></div>
-        </div>
+        <PagesTitle label="BLOG" />
 
         <div
           className={`${styles.gap} grid sm:grid-cols-2 grid-cols-1 justify-items-center gap-10 px-4 relative`}
