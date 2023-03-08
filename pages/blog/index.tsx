@@ -1,13 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 import PagesTitle from "@/components/reusable-ui/PagesTitle";
-import SectionTitle from "@/components/reusable-ui/SectionTitle";
-import { articles } from "@/constants/constants";
 import styles from "@/styles";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import ellipse from "../../assets/ellipse.svg";
+import { client, urlFor } from "../../lib/sanity.client";
 
-export default function Blog() {
+type Props = {
+  posts: Post[];
+};
+
+export default function Index({ posts }: Props) {
+  console.log(posts);
+
   return (
     <>
       <Head>
@@ -25,31 +31,37 @@ export default function Blog() {
         <PagesTitle label="BLOG" />
 
         <div
-          className={`${styles.gap} grid sm:grid-cols-2 grid-cols-1 justify-items-center gap-10 px-4 relative`}
+          className={`${styles.gap} grid sm:grid-cols-2 grid-cols-1 justify-items-center gap-10 px-4 relative `}
         >
-          {articles.map((article, index) => (
+          {posts.map((post: any) => (
             <Link
-              key={index}
-              href={`/blog/${article.title
-                .replaceAll(" ", "-")
-                .replaceAll("?", "-")}?id=${article.id}`}
+              key={post._id}
+              href={`/blog/${post.slug.current}`}
               className="bg-secondary p-2 sm:w-[100%] ss:w-[70%] w-[100%]"
             >
               <article>
-                <Image src={article.cover} alt="article" />
+                <img
+                  src={urlFor(post.mainImage.asset._ref).url()}
+                  alt="article"
+                />
 
                 <p className="text-gray-500 text-sm pt-2">
-                  {article.date} •{" "}
+                  {new Date(post._createdAt).toLocaleDateString("fr-FR", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}{" "}
+                  •{" "}
                   <span className="text-tertiary font-semibold">
-                    {article.author}
+                    Workshop by A
                   </span>
                 </p>
                 <h5 className={`${styles.heading5} min-h-[60px]`}>
-                  {article.title}
+                  {post.title}
                 </h5>
-                <p className={`${styles.text} description mt-3`}>
-                  {article.description}
-                </p>
+                <div className={`${styles.text} description mt-3`}>
+                  <p>{post.description}</p>
+                </div>
 
                 <button className="px-2 py-1 bg-tertiary rounded-sm text-white mt-3">
                   En voir plus
@@ -62,3 +74,14 @@ export default function Blog() {
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "post"]';
+  const posts = await client.fetch(query);
+  const authorQuery = '*[_type == "author"]';
+  const author = await client.fetch(authorQuery);
+
+  return {
+    props: { posts, author },
+  };
+};

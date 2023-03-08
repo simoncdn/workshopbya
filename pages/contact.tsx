@@ -1,13 +1,17 @@
+/* eslint-disable @next/next/no-img-element */
 import Button from "@/components/reusable-ui/Button";
 import PagesTitle from "@/components/reusable-ui/PagesTitle";
 import SectionTitle from "@/components/reusable-ui/SectionTitle";
+import { client, urlFor } from "@/lib/sanity.client";
 import styles from "@/styles";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 import contactImg from "../assets/contact.png";
 
-export default function contact() {
+export default function contact({ advices }: any) {
+  console.log(advices);
+
   return (
     <>
       <Head>
@@ -19,6 +23,21 @@ export default function contact() {
         className={`${styles.paddingX} ${styles.gap} ${styles.marginX} relative flex  flex-col pt-[40px]`}
       >
         <PagesTitle label="CONTACT" />
+
+        <div className="bg-violet-400 h-[400px] overflow-hidden relative">
+          <div className={`${styles.flexStart}`}>
+            {advices.map((advice: any, index: any) => (
+              <Image
+                key={advice._id}
+                src={urlFor(advice.mainImage.asset._ref).url()}
+                alt={advice.alt}
+                width={400}
+                height={200}
+                className="absolute top-[-40%]"
+              />
+            ))}
+          </div>
+        </div>
 
         <div className="flex w-[100%] bg-secondary pt-20 pb-10 px-10 relative">
           <form
@@ -66,3 +85,11 @@ export default function contact() {
     </>
   );
 }
+export const getServerSideProps = async () => {
+  const query = '*[_type == "advices"]';
+  const advices = await client.fetch(query);
+
+  return {
+    props: { advices },
+  };
+};

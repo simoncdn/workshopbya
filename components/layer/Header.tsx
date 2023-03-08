@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  console.log(router);
 
   return (
     <header
@@ -33,7 +34,9 @@ export default function Header() {
             <Link
               key={navLink.id}
               href={navLink.link}
-              className={`${styles.text} hover:text-tertiary`}
+              className={`${
+                router.route === navLink.link ? "underline" : "no-underline"
+              }  ${styles.text} hover:underline hover:text-tertiary`}
             >
               {navLink.title}
             </Link>

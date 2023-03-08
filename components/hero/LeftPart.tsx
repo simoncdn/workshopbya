@@ -18,7 +18,7 @@ export default function LeftPart() {
         grâce a mon expertise en gestion de communauté.
       </p>
 
-      <Button label="Contactez-moi" route="/#contact" />
+      <Button label="Contactez-moi" route="/contact" />
 
       <div className="ss:w-fit w-[100%] justify-center flex gap-1 items-start">
         {socialMedias.map((media) => (

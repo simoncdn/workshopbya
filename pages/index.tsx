@@ -4,16 +4,18 @@ import Hero from "@/components/hero/Hero";
 import About from "@/components/about/About";
 import Services from "@/components/services/Services";
 import Packs from "@/components/packs/Packs";
-import Contact from "@/components/contact/Contact";
 import { useRouter } from "next/router";
 import { HiArrowLongUp } from "react-icons/hi2";
 import Blog from "@/components/blog/Blog";
+import { client } from "@/lib/sanity.client";
 
 const inter = Inter({ subsets: ["latin"] });
+type Props = {
+  posts: Post[];
+};
 
-export default function Home() {
+export default function Home({ posts }: Props) {
   const router = useRouter();
-
   return (
     <>
       <Head>
@@ -27,7 +29,7 @@ export default function Home() {
         <About />
         <Services />
         <Packs />
-        <Blog />
+        <Blog posts={posts} />
         {/* <Contact /> */}
 
         <div className="fixed right-0 bottom-10">
@@ -35,7 +37,21 @@ export default function Home() {
             <HiArrowLongUp />
           </button>
         </div>
+
+        {/* cursor */}
+        {/* <div className="w-[32px] h-[32px] bg-primary fixed top-0 left-0 pointer-events-none z-50 rounded-full"></div> */}
       </main>
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "post"]';
+  const posts = await client.fetch(query);
+  const authorQuery = '*[_type == "author"]';
+  const author = await client.fetch(authorQuery);
+
+  return {
+    props: { posts, author },
+  };
+};

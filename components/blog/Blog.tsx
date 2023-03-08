@@ -1,12 +1,18 @@
-import { articles } from "@/constants/constants";
+/* eslint-disable @next/next/no-img-element */
 import styles from "@/styles";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../reusable-ui/Button";
 import SectionTitle from "../reusable-ui/SectionTitle";
-import article2 from "../../assets/socialmedia.jpg";
+import { client, urlFor } from "@/lib/sanity.client";
 
-export default function Blog() {
+type Props = {
+  posts: Post[];
+};
+
+export default function Blog({ posts }: Props) {
+  console.log(posts);
+
   return (
     <section
       className={`${styles.paddingX} ${styles.flexCol} relative sm:items-start items-center my-[100px]`}
@@ -16,23 +22,41 @@ export default function Blog() {
       <div
         className={`${styles.gap} sm:w-[100%] ss:w-[70%] w-[100%] grid sm:grid-cols-2 grid-cols-1 justify-self-center mt-12`}
       >
-        {articles.slice(-2).map((article, index) => (
+        {posts.slice(-2).map((post: any, index: any) => (
           <Link
             key={index}
-            href={`/blog/${article.title
-              .replaceAll(" ", "-")
-              .replaceAll("?", "-")}?id=${article.id}`}
-            className="flex flex-col items-center bg-secondary p-2 pb-4 "
+            href={`/blog/${post.slug.current}`}
+            className="bg-secondary p-2 sm:w-[100%] ss:w-[70%] w-[100%]"
           >
             <article>
-              <Image src={article.cover} alt="article" />
-              <p className={`${styles.text} pt-2 text-gray-500`}>
-                {article.date} •{" "}
+              <Image
+                src={urlFor(post.mainImage.asset._ref).url()}
+                alt="article"
+                width={700}
+                height={100}
+              />
+
+              <p className="text-gray-500 text-sm pt-2">
+                {new Date(post._createdAt).toLocaleDateString("fr-FR", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}{" "}
+                •{" "}
                 <span className="text-tertiary font-semibold">
-                  {article.author}
+                  Workshop by A
                 </span>
               </p>
-              <h5 className={`${styles.heading5}`}>{article.title}</h5>
+              <h5 className={`${styles.heading5} min-h-[60px]`}>
+                {post.title}
+              </h5>
+              <div className={`${styles.text} description mt-3`}>
+                {post.description}
+              </div>
+
+              <button className="px-2 py-1 bg-tertiary rounded-sm text-white mt-3">
+                En voir plus
+              </button>
             </article>
           </Link>
         ))}
