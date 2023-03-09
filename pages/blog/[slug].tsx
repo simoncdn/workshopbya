@@ -3,12 +3,17 @@ import styles from "@/styles";
 import { client, urlFor } from "@/lib/sanity.client";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/reusable-ui/RichTextComponents";
+import Button from "@/components/reusable-ui/Button";
 
 export default function Article({ post }: any) {
   return (
-    <div className={`${styles.boxWidth} ${styles.paddingX} pb-[100px]`}>
-      <h1 className={`${styles.heading1} pt-10`}>{post.title}</h1>
+    <div
+      className={`${styles.boxWidth} ${styles.paddingX} ${styles.flexCol} pb-[50px] md:mt-10 mt-20`}
+    >
+      <h1 className={`${styles.heading1}`}>{post.title}</h1>
       <PortableText value={post.body} components={RichTextComponents} />
+
+      <Button label="Voir les autres articles" route="/blog" />
     </div>
   );
 }
