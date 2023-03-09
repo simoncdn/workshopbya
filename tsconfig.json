@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "styles/index.js", "components/about/About.jsx", "context/CursorContext.tsx"],
   "exclude": ["node_modules"]
 }
