@@ -33,42 +33,45 @@ export default function Index({ posts }: Props) {
         <div
           className={`${styles.gap} grid sm:grid-cols-2 grid-cols-1 justify-items-center gap-10 px-4 relative `}
         >
-          {posts.map((post: any) => (
-            <Link
-              key={post._id}
-              href={`/blog/${post.slug.current}`}
-              className="bg-secondary p-2 sm:w-[100%] ss:w-[70%] w-[100%]"
-            >
-              <article>
-                <img
-                  src={urlFor(post.mainImage.asset._ref).url()}
-                  alt="article"
-                />
+          {posts
+            .slice()
+            .reverse()
+            .map((post: any) => (
+              <Link
+                key={post._id}
+                href={`/blog/${post.slug.current}`}
+                className="bg-secondary p-2 sm:w-[100%] ss:w-[70%] w-[100%]"
+              >
+                <article>
+                  <img
+                    src={urlFor(post.mainImage.asset._ref).url()}
+                    alt="article"
+                  />
 
-                <p className="text-gray-500 text-sm pt-2">
-                  {new Date(post._createdAt).toLocaleDateString("fr-FR", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  })}{" "}
-                  •{" "}
-                  <span className="text-tertiary font-semibold">
-                    Workshop by A
-                  </span>
-                </p>
-                <h5 className={`${styles.heading5} min-h-[60px]`}>
-                  {post.title}
-                </h5>
-                <div className={`${styles.text} description mt-3`}>
-                  <p>{post.description}</p>
-                </div>
+                  <p className="text-gray-500 text-sm pt-2">
+                    {new Date(post._createdAt).toLocaleDateString("fr-FR", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}{" "}
+                    •{" "}
+                    <span className="text-tertiary font-semibold">
+                      Workshop by A
+                    </span>
+                  </p>
+                  <h5 className={`${styles.heading5} min-h-[60px]`}>
+                    {post.title}
+                  </h5>
+                  <div className={`${styles.text} description mt-3`}>
+                    <p>{post.description}</p>
+                  </div>
 
-                <button className="px-2 py-1 bg-tertiary rounded-sm text-white mt-3">
-                  En voir plus
-                </button>
-              </article>
-            </Link>
-          ))}
+                  <button className="px-2 py-1 bg-tertiary rounded-sm text-white mt-3">
+                    En voir plus
+                  </button>
+                </article>
+              </Link>
+            ))}
         </div>
       </main>
     </>
