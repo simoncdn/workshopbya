@@ -16,14 +16,12 @@ export default function About() {
       </div>
 
       {/*LEFT PART*/}
-      <div className="sm:w-6/12 relative w-full flex justify-center sm:mt-0 mt-[100px]">
-        <div className="bg-secondary sm:w-[100%] sm:h-[500px] ss:w-[45%] xs:w-[70%] w-[100%] h-[400px] rounded-t-[50%] relative overflow-hidden">
-          <Image
-            src={aboutpic}
-            alt="alizeeplazen"
-            className="absolute bottom-[-10%] sm:w-[100%] w-[100%]"
-          />
-        </div>
+      <div className="sm:w-6/12 relative w-full flex justify-center sm:mt-0 ">
+        <Image
+          src={aboutpic}
+          alt="alizeeplazen"
+          className="relative sm:w-[100%] ss:w-[70%] z-[100%]  rounded-t-full"
+        />
       </div>
 
       {/*RIGHT PART*/}
