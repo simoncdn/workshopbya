@@ -37,9 +37,6 @@ export default function Home({ posts }: Props) {
             <HiArrowLongUp />
           </button>
         </div>
-
-        {/* cursor */}
-        {/* <div className="w-[32px] h-[32px] bg-primary fixed top-0 left-0 pointer-events-none z-50 rounded-full"></div> */}
       </main>
     </>
   );
