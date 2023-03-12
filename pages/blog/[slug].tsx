@@ -1,6 +1,5 @@
-import Image from "next/image";
 import styles from "@/styles";
-import { client, urlFor } from "@/lib/sanity.client";
+import { client } from "@/lib/sanity.client";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/reusable-ui/RichTextComponents";
 import Button from "@/components/reusable-ui/Button";
@@ -8,7 +7,7 @@ import Button from "@/components/reusable-ui/Button";
 export default function Article({ post }: any) {
   return (
     <div
-      className={`${styles.boxWidth} ${styles.paddingX} ${styles.flexCol} pb-[50px] md:mt-10 mt-20`}
+      className={`${styles.boxWidth} ${styles.paddingX} ${styles.flexCol} relative pb-[50px] md:mt-10 mt-20`}
     >
       <h1 className={`${styles.heading1}`}>{post.title}</h1>
       <PortableText value={post.body} components={RichTextComponents} />
