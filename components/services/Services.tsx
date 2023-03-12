@@ -5,6 +5,8 @@ import React from "react";
 import littleEllipse from "../../assets/littleEllipse.svg";
 import cube from "../../assets/serviceBox.svg";
 import SectionTitle from "../reusable-ui/SectionTitle";
+import { motion } from "framer-motion";
+import { sectionAnimate } from "@/animation/animation";
 
 export default function Services() {
   return (
@@ -13,16 +15,20 @@ export default function Services() {
     >
       <SectionTitle title="Services" id="services" />
 
-      <div className={`${styles.flexCol} gap-20 mt-20`}>
+      <div className={`${styles.flexCol} gap-20`}>
         {services.map((service) => (
           <div
             className={`${styles.flexCol} ${styles.gap} sm:grid grid-cols-2 grid-flow-dense`}
             key={service.id}
           >
-            <div
+            <motion.div
+              initial={"initial"}
+              whileInView={"onScreen"}
+              viewport={{ once: true, amount: 0.3 }}
+              variants={sectionAnimate}
               className={` ${
                 parseInt(service.id) % 2 === 0
-                  ? "col-start-2 col-end-3"
+                  ? "col-start-2 col-end-3 "
                   : "col-start-1 col-end-2"
               } ${styles.flexCol} items-center`}
             >
@@ -40,8 +46,12 @@ export default function Services() {
               <p className={`${styles.paragraph} sm:mt-[20px] mt-[10px]`}>
                 {service.description}
               </p>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              initial={"initial"}
+              whileInView={"onScreen"}
+              viewport={{ once: true, amount: 0.3 }}
+              variants={sectionAnimate}
               className={` ${
                 parseInt(service.id) % 2 === 0
                   ? "col-start-1 col-end-2"
@@ -56,7 +66,7 @@ export default function Services() {
                   className="top-0 right-0 w-[80%] h-[100%] z-10"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>
