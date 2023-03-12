@@ -7,39 +7,71 @@ import logo from "../../assets/logo.png";
 import { CgMenuRight } from "react-icons/cg";
 import { RxCross1 } from "react-icons/rx";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  console.log(router);
-
   return (
     <header
-      className={`${styles.boxWidth} ${styles.paddingX} ${styles.gap} flex sm:relative fixed z-20`}
+      className={`${styles.boxWidth} ${styles.paddingX} ${styles.gap} flex sm:relative fixed top-0  z-20`}
     >
-      <div className="w-6/12 md:py-6 py-4">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          transition: { duration: 0.4, delay: 0.2 },
+        }}
+        exit={{ opacity: 0, transition: { duration: 0.2 } }}
+        className="w-6/12 md:py-6 py-4"
+      >
         <Link href={"/"} className="flex items-center w-fit gap-2">
           <Image src={logo} alt="alt" className="w-[40px]" />
           <h2 className={`${styles.text} sm:flex hidden `}>Workshop by A</h2>
         </Link>
-      </div>
+      </motion.div>
 
-      <nav
+      <motion.nav
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { duration: 0, delay: 0 } }}
+        viewport={{ once: true, amount: 0.5 }}
         className={`${
           router.pathname === "/" ? "sm:bg-secondary" : "bg-transparent"
         } w-6/12`}
       >
         <ul className={`sm:${styles.flexBetween} hidden h-full px-2`}>
           {navLinks.map((navLink) => (
-            <Link
+            <motion.li
+              initial={{ opacity: 0, y: -20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.4, delay: 0.2 },
+              }}
+              exit={{ opacity: 0, y: -20, transition: { duration: 0.4 } }}
               key={navLink.id}
-              href={navLink.link}
-              className={`${
-                router.route === navLink.link ? "underline" : "no-underline"
-              }  ${styles.text} hover:underline hover:text-tertiary`}
             >
-              {navLink.title}
-            </Link>
+              <Link
+                href={navLink.link}
+                className={`${styles.text} group relative `}
+              >
+                {navLink.title}
+
+                {navLink.link === router.pathname && (
+                  <motion.span
+                    layoutId="underline"
+                    className="absolute left-0 top-full h-[1px] w-full bg-primary"
+                  />
+                )}
+                <div
+                  className={`${
+                    router.route === navLink.link
+                      ? "opacity-100 h-[0px]"
+                      : "opacity-0 group-hover:animate-underline h-[1px]"
+                  } w-[100%] rounded-full bg-primary group-hover:opacity-100`}
+                ></div>
+              </Link>
+            </motion.li>
           ))}
         </ul>
 
@@ -67,7 +99,7 @@ export default function Header() {
             </ul>
           ) : null}
         </div>
-      </nav>
+      </motion.nav>
     </header>
   );
 }
