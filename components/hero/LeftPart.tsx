@@ -1,15 +1,22 @@
 import { socialMedias } from "@/constants/constants";
 import styles from "@/styles";
 import Link from "next/link";
-import React from "react";
 import Button from "../reusable-ui/Button";
+import { motion } from "framer-motion";
 
 export default function LeftPart() {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, delay: 0.1 },
+      }}
+      exit={{ opacity: 0, y: 10, transition: { duration: 0.5 } }}
       className={`${styles.flexCol} sm:items-start items-center sm:w-6/12  pt-10 sm:mt-0 mt-16`}
     >
-      <h1 className={`${styles.heading1} flex flex-wrap `}>
+      <h1 className={`${styles.heading1} flex flex-wrap overflow-hidden`}>
         COMMUNITY MANAGER
       </h1>
       <h3 className={`${styles.heading3} pt-4 pb-6 `}>Alizée Plazen</h3>
@@ -25,12 +32,12 @@ export default function LeftPart() {
           <Link
             href={media.link}
             key={media.id}
-            className="lg:text-[30px] text-[24px]"
+            className="lg:text-[30px] text-[24px] "
           >
             {media.icon}
           </Link>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
