@@ -3,11 +3,11 @@ import { Inter } from "@next/font/google";
 import Hero from "@/components/hero/Hero";
 import About from "@/components/about/About";
 import Services from "@/components/services/Services";
-import Packs from "@/components/packs/Packs";
 import { useRouter } from "next/router";
 import { HiArrowLongUp } from "react-icons/hi2";
 import Blog from "@/components/blog/Blog";
 import { client } from "@/lib/sanity.client";
+import { useScroll } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 type Props = {
@@ -16,6 +16,7 @@ type Props = {
 
 export default function Home({ posts }: Props) {
   const router = useRouter();
+
   return (
     <>
       <Head>
@@ -28,18 +29,15 @@ export default function Home({ posts }: Props) {
         <Hero />
         <About />
         <Services />
-        <Packs />
         <Blog posts={posts} />
-        {/* <Contact /> */}
 
         <div className="fixed right-0 bottom-10">
-          <button onClick={() => router.push("/")} className="text-[50px]">
-            <HiArrowLongUp />
-          </button>
+          <a href="#">
+            <button className="text-[50px]">
+              <HiArrowLongUp />
+            </button>
+          </a>
         </div>
-
-        {/* cursor */}
-        {/* <div className="w-[32px] h-[32px] bg-primary fixed top-0 left-0 pointer-events-none z-50 rounded-full"></div> */}
       </main>
     </>
   );

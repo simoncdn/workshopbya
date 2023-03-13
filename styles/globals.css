@@ -9,10 +9,9 @@
     @apply bg-background;
   }
   html{
-    @apply scroll-smooth;
+    @apply scroll-smooth ;
   }
 }
-
 .description{
   overflow: hidden;
   text-overflow: ellipsis;

@@ -33,9 +33,16 @@ module.exports = {
           "0%": { transform: "translateY(50px)", opacity: "0" },
           "100%%": { transform: "translateY(0px)", opacity: "1" },
         },
+        slideShow: {
+          "0%": { transform: "translateX(200px)", opacity: "0" },
+          "15%": { transform: "translateX(0px)", opacity: "1" },
+          "85%": { transform: "translateX(0px)", opacity: "1" },
+          "100%": { transform: "translateX(-200px)", opacity: "0" },
+        },
       },
       animation: {
         sidebar: "sidebar 1000ms ease-in-out ",
+        slideShow: "slideShow 8000ms ease-in-out",
       },
     },
   },

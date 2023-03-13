@@ -20,8 +20,8 @@ export const navLinks = [
   },
   {
     id: "services",
-    title: "Services",
-    link: "/#services",
+    title: "Tarifs",
+    link: "/services",
   },
   {
     id: "blog",
@@ -99,6 +99,7 @@ export const packs = [
     price: "200",
     cardColor: "white",
     textColor: "primary",
+    animationDelay: 1,
     description: [
       "1 post par semaine",
       "2 stories par semaine",
@@ -110,6 +111,7 @@ export const packs = [
     price: "400",
     cardColor: "secondary",
     textColor: "primary",
+    animationDelay: 1.4,
     description: [
       "2 posts par semaine",
       "4 stories par semaine",
@@ -122,6 +124,7 @@ export const packs = [
     price: "600",
     cardColor: "tertiary",
     textColor: "white",
+    animationDelay: 1.8,
     description: [
       "1 post par semaine",
       "2 stories par semaine",
