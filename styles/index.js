@@ -9,9 +9,9 @@ const styles = {
   heading4: "md:text-3xl sm:text-2xl text-xl font-title text-primary relative ",
   heading5:
     "md:text-xl sm:text-lg text-md font-lato font-bold text-primary relative ",
-  text: "md:text-base sm:text-sm text-sm font-text",
+  text: "md:text-base sm:text-sm text-xs font-text",
   paragraph:
-    "md:text-base sm:text-sm text-sm font-text text-primary relative sm:w-full ss:w-[70%] sm:text-left ss:text-center text-left",
+    "md:text-base sm:text-sm text-xs font-text text-primary relative sm:w-full ss:w-[70%] sm:text-left ss:text-center text-left",
   input: "border-b border-black bg-transparent placeholder-black",
 
   flexCenter: "flex justify-center items-center",

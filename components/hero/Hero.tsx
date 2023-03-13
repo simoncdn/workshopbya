@@ -10,7 +10,7 @@ export default function Hero() {
     <section
       className={`${styles.paddingX} ${styles.gap} relative flex justify-center  pb-[100px]`}
     >
-      <div className="absolute top-[-30%] left-[0]">
+      <div className="lg:hidden absolute top-[-30%] left-[0] block ">
         <Image src={tache} alt="tache" />
       </div>
 
