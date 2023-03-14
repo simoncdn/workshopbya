@@ -7,12 +7,11 @@ import styles from "@/styles";
 import Head from "next/head";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import contactImg from "../assets/contact.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { sectionPageAnimate } from "@/animation/animation";
-export default function Contact({ advices }: any) {
-  console.log(advices);
+import Form from "@/components/form/Form";
 
+export default function Contact({ advices }: any) {
   let maxIndex = advices.length;
   const [index, setIndex] = useState(0);
 
@@ -58,48 +57,7 @@ export default function Contact({ advices }: any) {
           </div>
         </div>
 
-        <div className="flex w-[100%] bg-secondary pt-20 pb-10 px-10 relative">
-          <form
-            action=""
-            className="sm:w-[60%] w-[100%] sm:items-start items-center flex flex-col gap-[40px] "
-          >
-            <div className="sm:w-[100%] ss:flex-row flex-col w-[100%] flex gap-[40px]">
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Nom"
-                required
-                className={`${styles.text} ${styles.input} sm:w-6/12  w-[100%] py-2 px-4 `}
-              />
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Email"
-                required
-                className={`${styles.text} ${styles.input} sm:w-6/12 w-[100%]  py-2 px-4 `}
-              />
-            </div>
-
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Message"
-              rows={1}
-              className={`${styles.text} ${styles.input} w-[100%] py-2 px-4 `}
-            ></textarea>
-            <Button label="Envoyez" route="" />
-          </form>
-
-          <div className="w-6/12 relative">
-            <Image
-              src={contactImg}
-              alt="alizeeplazen"
-              className="w-[90%] absolute sm:block hidden right-[-10%] bottom-[0%]"
-            />
-          </div>
-        </div>
+        <Form />
       </motion.section>
     </>
   );
