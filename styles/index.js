@@ -18,6 +18,7 @@ const styles = {
   flexStart: "flex justify-center items-start",
   flexBetween: "flex justify-between items-center",
   flexCol: "flex justify-center flex-col",
+  flexColReverse: "flex justify-center flex-col-reverse",
 
   paddingX: "lg:px-0 sm:px-12 px-4",
   paddingY: "sm:py-24 py-14",
