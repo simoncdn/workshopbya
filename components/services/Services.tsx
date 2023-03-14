@@ -59,7 +59,7 @@ export default function Services() {
               } ${styles.flexCenter}`}
             >
               <div className={`${styles.flexCenter} relative`}>
-                <Image src={cube} alt="" className="absolute" />
+                <Image src={cube} alt="cube" className="absolute" />
                 <Image
                   src={service.picture}
                   alt={service.alt}
