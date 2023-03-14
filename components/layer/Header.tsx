@@ -12,6 +12,11 @@ import { motion } from "framer-motion";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+
+  const handleClick = (navLink: any) => {
+    router.push(navLink);
+    setIsOpen(false);
+  };
   return (
     <header
       className={`${styles.boxWidth} ${styles.paddingX} ${styles.gap} flex sm:relative fixed top-0  z-20`}
@@ -77,7 +82,7 @@ export default function Header() {
 
         <div className="sm:hidden flex flex-row-reverse h-full relative ">
           <button
-            onClick={() => setIsOpen((prevValue) => !prevValue)}
+            onClick={() => setIsOpen(!isOpen)}
             className="text-[24px] relative z-20"
           >
             {isOpen ? <RxCross1 /> : <CgMenuRight />}
@@ -88,13 +93,13 @@ export default function Header() {
               className={`${styles.flexBetween} ${styles.glassBg} flex-col md:gap-10 gap-4 px-8 py-4 absolute top-[80%] right-[10%] min-w-[120px] rounded-xl animate-sidebar text-center z-10`}
             >
               {navLinks.map((navLink) => (
-                <Link
+                <button
                   key={navLink.id}
-                  href={navLink.link}
                   className={`${styles.text} hover:text-tertiary`}
+                  onClick={() => handleClick(navLink.link)}
                 >
                   {navLink.title}
-                </Link>
+                </button>
               ))}
             </ul>
           ) : null}
