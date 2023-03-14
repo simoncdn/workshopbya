@@ -33,7 +33,7 @@ export default function Home({ posts }: Props) {
 
         <div className="fixed right-0 bottom-10">
           <a href="#">
-            <button className="text-[50px]">
+            <button className="xs:text-[50px] text-[35px]">
               <HiArrowLongUp />
             </button>
           </a>
