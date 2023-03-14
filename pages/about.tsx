@@ -38,12 +38,12 @@ export default function about() {
         initial={sectionPageAnimate.initial}
         animate={sectionPageAnimate.animate}
         variants={sectionPageAnimate}
-        className={`${styles.boxWidth} w-[100%] relative sm:-[100px] pt-[40px] pb-[100px]`}
+        className={`${styles.boxWidth} w-[100%] relative pt-[40px] pb-[100px]`}
       >
         <PagesTitle label="À PROPOS" />
 
         <div
-          className={`${styles.flexCol} ${styles.gap}  ${styles.paddingX} items-center sm:flex-row sm:text-left text-center min-h-[550px] relative `}
+          className={`${styles.flexColReverse} ${styles.gap}  ${styles.paddingX} items-center sm:flex-row sm:text-left text-center min-h-[550px] relative `}
         >
           <motion.div
             initial={aboutTextAnimate.initial}
@@ -89,7 +89,7 @@ export default function about() {
         </div>
 
         <div
-          className={`flex flex-col-reverse justify-center ${styles.gap}  ${styles.paddingX} items-center sm:flex-row sm:text-left text-center relative sm:py-20 pt-10 sm:bg-secondary lg:my-[100px] `}
+          className={`${styles.flexCol} ${styles.gap}  ${styles.paddingX} items-center sm:flex-row sm:text-left text-center relative sm:py-20 pt-10 sm:bg-secondary lg:my-[100px] `}
         >
           <div className={`${styles.flexCenter} ss:w-6/12 w-[100%]  relative`}>
             <motion.img
