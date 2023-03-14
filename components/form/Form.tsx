@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Button from "../reusable-ui/Button";
 import axios from "axios";
+import picture from "public/contact.png";
 
 export default function Form() {
   const [inputData, setInputData] = useState({
@@ -65,9 +66,9 @@ export default function Form() {
       </form>
 
       <div className="sm:w-6/12 relative">
-        <img
-          src="./contact.png"
-          alt="alizeeplazen"
+        <Image
+          src={picture}
+          alt="tablette et téléphone avec le logo"
           className="w-[90%] absolute sm:block hidden right-[-10%] bottom-[0%]"
         />
       </div>

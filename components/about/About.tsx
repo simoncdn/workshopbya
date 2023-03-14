@@ -4,7 +4,7 @@ import ellipse from "../../assets/ellipse.svg";
 import styles from "@/styles";
 import Button from "../reusable-ui/Button";
 import SectionTitle from "../reusable-ui/SectionTitle";
-import aboutpic from "../../assets/WorkshopbyA-About.jpg";
+import picture from "public/Workshop-by-a-3-about.jpg";
 import { motion } from "framer-motion";
 import { sectionAnimate } from "@/animation/animation";
 
@@ -17,7 +17,6 @@ export default function About() {
         <Image src={ellipse} alt="ellipse" />
       </div>
 
-      {/*LEFT PART*/}
       <motion.div
         initial={"initial"}
         whileInView={"onScreen"}
@@ -26,12 +25,12 @@ export default function About() {
         className="sm:w-6/12 relative w-full flex justify-center sm:mt-0 "
       >
         <Image
-          src={aboutpic}
+          src={picture}
           alt="alizeeplazen"
           className="relative sm:w-[100%] ss:w-[70%] z-[100%]  rounded-t-full"
         />
       </motion.div>
-      {/*RIGHT PART*/}
+
       <div
         className={`${styles.flexCol} sm:items-start items-center sm:w-6/12 relative`}
       >

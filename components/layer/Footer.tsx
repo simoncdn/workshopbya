@@ -2,7 +2,6 @@ import { socialMedias } from "@/constants/constants";
 import styles from "@/styles";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import logo from "../../assets/logo.png";
 
 export default function Footer() {

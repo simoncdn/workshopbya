@@ -4,16 +4,21 @@ import Link from "next/link";
 import Button from "../reusable-ui/Button";
 import { motion } from "framer-motion";
 
+const sectionPartAnimate = {
+  initial: { opacity: 0, y: 10 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: 0.1 },
+  },
+};
+
 export default function LeftPart() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, delay: 0.1 },
-      }}
-      exit={{ opacity: 0, y: 10, transition: { duration: 0.5 } }}
+      initial={sectionPartAnimate.initial}
+      animate={sectionPartAnimate.animate}
+      variants={sectionPartAnimate}
       className={`${styles.flexCol} sm:items-start items-center sm:w-6/12  sm:pt-10 sm:mt-0 mt-16`}
     >
       <h1 className={`${styles.heading1} flex flex-wrap overflow-hidden`}>
