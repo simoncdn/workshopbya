@@ -25,6 +25,7 @@ const aboutSecondImageAnimate = {
     transition: { duration: 0.5, delay: 1.4 },
   },
 };
+
 export default function about() {
   return (
     <>
@@ -37,7 +38,7 @@ export default function about() {
         initial={sectionPageAnimate.initial}
         animate={sectionPageAnimate.animate}
         variants={sectionPageAnimate}
-        className={`${styles.boxWidth} w-[100%] relative sm:-[100px] pt-[40px]`}
+        className={`${styles.boxWidth} w-[100%] relative sm:-[100px] pt-[40px] pb-[100px]`}
       >
         <PagesTitle label="À PROPOS" />
 
@@ -48,7 +49,7 @@ export default function about() {
             initial={aboutTextAnimate.initial}
             animate={aboutTextAnimate.animate}
             variants={aboutTextAnimate}
-            className={`${styles.flexCenter} ${styles.text} ss:w-6/12 w-[100%]  h-[100%]`}
+            className={`${styles.flexCenter} ${styles.text} ss:w-6/12 w-[100%] h-[100%]`}
           >
             <p>
               Bonjour, je m'appelle Alizée et je suis une jeune entrepreneure
@@ -80,7 +81,7 @@ export default function about() {
               initial={aboutFirstImageAnimate.initial}
               animate={aboutFirstImageAnimate.animate}
               variants={aboutFirstImageAnimate}
-              src="./workshopbya2-about.jpg"
+              src="./workshop-by-a-about.jpg"
               alt=""
               className="sm:w-[80%] w-[70%]"
             />
@@ -88,18 +89,16 @@ export default function about() {
         </div>
 
         <div
-          // className={`${styles.flexCenter} ${styles.gap} ${styles.paddingX} py-20 bg-secondary relative `}
-
-          className={`flex flex-col-reverse justify-center ${styles.gap}  ${styles.paddingX} items-center sm:flex-row sm:text-left text-center relative sm:py-20 pt-10 sm:bg-secondary`}
+          className={`flex flex-col-reverse justify-center ${styles.gap}  ${styles.paddingX} items-center sm:flex-row sm:text-left text-center relative sm:py-20 pt-10 sm:bg-secondary lg:my-[100px] `}
         >
           <div className={`${styles.flexCenter} ss:w-6/12 w-[100%]  relative`}>
             <motion.img
               initial={aboutSecondImageAnimate.initial}
               animate={aboutSecondImageAnimate.animate}
               variants={aboutSecondImageAnimate}
-              src="./workshopbya3-about.jpg"
+              src="./workshop-by-a-2-about.jpg"
               alt=""
-              className="sm:absolute relative right-0 sm:top-[-250px] sm:w-[85%] w-[70%]"
+              className="sm:absolute max-w-[400px] relative right-0 sm:top-[-250px] sm:w-[85%] w-[70%]"
             />
           </div>
           <motion.div
