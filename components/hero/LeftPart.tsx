@@ -14,7 +14,7 @@ export default function LeftPart() {
         transition: { duration: 0.5, delay: 0.1 },
       }}
       exit={{ opacity: 0, y: 10, transition: { duration: 0.5 } }}
-      className={`${styles.flexCol} sm:items-start items-center sm:w-6/12  pt-10 sm:mt-0 mt-16`}
+      className={`${styles.flexCol} sm:items-start items-center sm:w-6/12  sm:pt-10 sm:mt-0 mt-16`}
     >
       <h1 className={`${styles.heading1} flex flex-wrap overflow-hidden`}>
         COMMUNITY MANAGER
