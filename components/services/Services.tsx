@@ -15,7 +15,7 @@ export default function Services() {
     >
       <SectionTitle title="Services" id="services" />
 
-      <div className={`${styles.flexCol} gap-20`}>
+      <div className={`${styles.flexCol} ${styles.gap} sm:mt-0 mt-10`}>
         {services.map((service) => (
           <div
             className={`${styles.flexCol} ${styles.gap} sm:grid grid-cols-2 grid-flow-dense`}
