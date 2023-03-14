@@ -16,7 +16,7 @@ const titlePageUnderlineAnimate = {
 
 export default function PagesTitle({ label }: PagesTitleProps) {
   return (
-    <div className="flex flex-col items-center pb-12">
+    <div className="flex flex-col items-center pb-12 pt-5">
       <h1 className={`${styles.heading1} text-center overflow-hidden`}>
         <motion.span
           initial={titlePageAnimate.initial}
