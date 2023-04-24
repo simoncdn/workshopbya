@@ -1,6 +1,7 @@
 import { GrFacebookOption } from "react-icons/gr";
 import { TbBrandTiktok } from "react-icons/tb";
 import { AiOutlineInstagram, AiOutlineLinkedin } from "react-icons/ai";
+import { BsBook } from "react-icons/bs";
 
 import brandingPicture from "../assets/servicespictures/Branding-community-management.png";
 import strategyPicture from "../assets/servicespictures/Planning-editorial-community-management.png";
@@ -21,7 +22,18 @@ export const navLinks = [
   {
     id: "services",
     title: "Tarifs",
-    link: "/services",
+    subtitle: [
+      {
+        id: "forfaits",
+        title: "Forfaits",
+        link: "/services/forfaits",
+      },
+      {
+        id: "oneshots",
+        title: "One shots",
+        link: "/services/oneshots",
+      },
+    ],
   },
   {
     id: "blog",
@@ -55,6 +67,11 @@ export const socialMedias = [
     id: "tiktok",
     icon: <TbBrandTiktok />,
     link: "https://www.tiktok.com/@workshopbya",
+  },
+  {
+    id: "book",
+    icon: <BsBook />,
+    link: "https://book-plazen-alizee.my.canva.site/",
   },
 ];
 
@@ -95,43 +112,101 @@ export const services = [
 
 export const packs = [
   {
-    title: "Débutant",
-    price: "200",
+    title: "Forfait Découverte",
+    price: "300",
+    subtitle: "Gestion d'un Réseau social",
     cardColor: "white",
     textColor: "primary",
     animationDelay: 1,
     description: [
       "1 post par semaine",
       "2 stories par semaine",
-      "Création d'un grid planner et preset sur mesure pour avoir un feed harmonieux",
+      "Analyses",
+      "Veille et recherche de contenus",
+      "Création de contenu",
+      "Création d'un grid planner",
+      "Preset sur mesure",
+      "Mise en place d'une stratégie social media",
     ],
   },
   {
-    title: "Basic",
-    price: "400",
+    title: "Forfait Basique",
+    price: "450",
+    subtitle: "Gestion de deux Réseaux sociaux",
     cardColor: "secondary",
     textColor: "primary",
     animationDelay: 1.4,
     description: [
       "2 posts par semaine",
       "4 stories par semaine",
-      "Création d'un grid planner et preset sur mesure pour avoir un feed harmonieux",
-      "Création d'un calendrier éditorial",
+      "Analyses",
+      "Veille et recherche de contenus",
+      "Création de contenu",
+      "Création d'un grid planner",
+      "Preset sur mesure",
+      "Mise en place d'une stratégie social media",
     ],
   },
   {
-    title: "Business",
+    title: "Fortfait professionnel",
     price: "600",
-    cardColor: "tertiary",
-    textColor: "white",
+    subtitle: "Gestion de trois Réseau social",
+    cardColor: "grey",
+    textColor: "primary",
     animationDelay: 1.8,
     description: [
-      "1 post par semaine",
-      "2 stories par semaine",
-      "Création d'un grid planner et preset sur mesure pour avoir un feed harmonieux",
-      "Création d'un calendrier éditorial",
-      "Création d'une charte graphique",
-      "Mise en place d'animation (jeu concours...)",
+      "3 posts par semaine",
+      "6 stories par semaine",
+      "Analyses",
+      "Veille et recherche de contenus",
+      "Création de contenu",
+      "Création d'un grid planner",
+      "Preset sur mesure",
+      "Mise en place d'une stratégie social media",
     ],
+  },
+  {
+    title: "Forfait premium",
+    price: "850",
+    subtitle: "Gestion de + de trois Réseau social",
+    cardColor: "tertiary",
+    textColor: "primary",
+    animationDelay: 2.2,
+    description: ["Contactez moi pour discuter ensemble de votre projet"],
+  },
+];
+
+export const oneShots = [
+  {
+    title: "InstaProfil+",
+    price: "150",
+    description:
+      "Êtes-vous à la recherche d'un moyen efficace pour améliorer votre présence en ligne ? Cette prestation pourrait vous aider ! Elle comprend la rédaction optimisée de votre biographie, la mise à jour de votre photo de profil et la création des différentes stories à la une.",
+    cardColor: "white",
+    animationDelay: 1,
+  },
+  {
+    title: "Campagne publicitaire",
+    price: "250",
+    description:
+      "Vous souhaitez atteindre de nouveaux clients et développer votre entreprise sur les réseaux sociaux ? Ce One Shot est concu pour vous aider à atteindre vos objectifs. Je crée des contenus uniques et engageants adaptés à votre entreprise et je les diffuse auprès de votre public cible pour maximiser votre visibilité en ligne.",
+    cardColor: "secondary",
+    animationDelay: 1.4,
+  },
+  {
+    title: "Créateur de concours",
+    price: "150",
+    description:
+      "Vous cherchez un moyen efficace de renforcer l'engagement de votre public sur les réseaux sociaux tout en augmentant la visibilité de votre entreprise ? Mon One Shot d'organisation de jeu concours sur les réseaux sociaux est la solution qu'il faut. Je crée des jeux concours créatifs et attrayants adaptés à votre entreprise et à votre public cible pour stimuler l'engage,emt et la participation de votre audience.",
+    cardColor: "grey",
+    animationDelay: 1.8,
+  },
+  {
+    title: "Identité visuelle",
+    price: "300",
+    description:
+      "Je vous propose un One Shot 'identitié visuelle' pour donner à votre entreprise une image professionnelle et originale. Je crée pour vous une palette de couleurs harmonieuse adaptée à votre image de marque et à votre logo, en passant par le design des cartes de visites ou grille tarifaire. Donnez à votre entreprise l'identité visuelle qu'elle mérite.",
+    cardColor: "tertiary",
+    animationDelay: 2.2,
   },
 ];
