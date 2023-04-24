@@ -11,11 +11,13 @@ import { motion } from "framer-motion";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isPackOpen, setIsPackOpen] = useState(false);
   const router = useRouter();
 
   const handleClick = (navLink: any) => {
     router.push(navLink);
     setIsOpen(false);
+    setIsPackOpen(false);
   };
   return (
     <header
@@ -56,12 +58,27 @@ export default function Header() {
               exit={{ opacity: 0, y: -20, transition: { duration: 0.4 } }}
               key={navLink.id}
             >
-              <Link
-                href={navLink.link}
-                className={`${styles.text} group relative `}
+              <div
+                // href={navLink.link}
+                className={`${styles.text} group relative`}
               >
-                {navLink.title}
-
+                {navLink.link ? (
+                  <Link href={navLink.link}>{navLink.title}</Link>
+                ) : (
+                  <div>{navLink.title}</div>
+                )}
+                <div className="absolute flex-col top-[30px] flex opacity-0 group-hover:opacity-100 gap-2">
+                  {navLink.subtitle &&
+                    navLink.subtitle.map((sub) => (
+                      <Link
+                        href={sub.link}
+                        key={sub.id}
+                        className={`${styles.text} w-max whitespace-nowrap text-black hover:underline`}
+                      >
+                        {sub.title}
+                      </Link>
+                    ))}
+                </div>
                 {navLink.link === router.pathname && (
                   <motion.span
                     layoutId="underline"
@@ -75,7 +92,7 @@ export default function Header() {
                       : "opacity-0 group-hover:animate-underline h-[1px]"
                   } w-[100%] rounded-full bg-primary group-hover:opacity-100`}
                 ></div>
-              </Link>
+              </div>
             </motion.li>
           ))}
         </ul>
@@ -93,13 +110,40 @@ export default function Header() {
               className={`${styles.flexBetween} ${styles.glassBg} flex-col md:gap-10 gap-4 px-8 py-4 absolute top-[80%] right-[10%] min-w-[120px] rounded-xl animate-sidebar text-center z-10`}
             >
               {navLinks.map((navLink) => (
-                <button
-                  key={navLink.id}
-                  className={`${styles.text} hover:text-tertiary`}
-                  onClick={() => handleClick(navLink.link)}
-                >
-                  {navLink.title}
-                </button>
+                <div key={navLink.id}>
+                  <div className={`${styles.text} hover:text-tertiary`}>
+                    {navLink.link ? (
+                      <Link
+                        href={navLink.link}
+                        onClick={() => handleClick(navLink.link)}
+                      >
+                        {navLink.title}
+                      </Link>
+                    ) : (
+                      <button onClick={() => setIsPackOpen(!isPackOpen)}>
+                        {navLink.title}
+                      </button>
+                    )}
+                  </div>
+
+                  {navLink.title === "Tarifs" && isPackOpen && (
+                    <div
+                      className={`${styles.glassBg} rounded-md overflow-hidden absolute flex-col top-[40%] right-[100%] p-2 flex gap-2`}
+                    >
+                      {navLink.subtitle &&
+                        navLink.subtitle.map((sub) => (
+                          <Link
+                            href={sub.link}
+                            key={sub.id}
+                            onClick={handleClick}
+                            className={`${styles.text} w-max whitespace-nowrap text-black hover:underline`}
+                          >
+                            {sub.title}
+                          </Link>
+                        ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </ul>
           ) : null}
