@@ -15,6 +15,7 @@ module.exports = {
         secondary: "#E6D9C9",
         tertiary: "#927963",
         background: "#F6F3EC",
+        grey: "#E0DDD7",
       },
       fontFamily: {
         title: "Abril Fatface",
