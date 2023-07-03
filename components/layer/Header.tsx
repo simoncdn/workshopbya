@@ -131,14 +131,14 @@ export default function Header() {
                     >
                       {navLink.subtitle &&
                         navLink.subtitle.map((sub) => (
-                          <Link
+                          <a
                             href={sub.link}
                             key={sub.id}
                             onClick={handleClick}
                             className={`${styles.text} w-max whitespace-nowrap text-black hover:underline`}
                           >
                             {sub.title}
-                          </Link>
+                          </a>
                         ))}
                     </div>
                   )}
