@@ -19,13 +19,17 @@ export default function LeftPart() {
       initial={sectionPartAnimate.initial}
       animate={sectionPartAnimate.animate}
       variants={sectionPartAnimate}
-      className={`${styles.flexCol} sm:items-start items-center sm:w-6/12  sm:pt-10 sm:mt-0 mt-16`}
+      className={`${styles.flexCol} items-center sm:w-6/12 text-center sm:pt-10 sm:mt-0 mt-16`}
     >
       <h1 className={`${styles.heading1} flex flex-wrap overflow-hidden`}>
         COMMUNITY MANAGER
       </h1>
-      <h3 className={`${styles.heading3} pt-4 pb-6 `}>Alizée Plazen</h3>
-      <p className={`${styles.paragraph} sm:pt-4 pt-0`}>
+      <h3 className={`${styles.heading3} pt-4 pb-6 text-center`}>
+        Alizée Plazen
+      </h3>
+      <p
+        className={`md:text-base sm:text-sm text-xs font-text text-primary relative sm:w-full ss:w-[70%] sm:pt-4 pt-0 text-center`}
+      >
         Connectez-vous avec votre audience et augmentez votre présence en ligne
         grâce a mon expertise en gestion de communauté.
       </p>

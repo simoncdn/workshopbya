@@ -42,9 +42,8 @@ export default function Header() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, transition: { duration: 0, delay: 0 } }}
         viewport={{ once: true, amount: 0.5 }}
-        className={`${
-          router.pathname === "/" ? "sm:bg-secondary" : "bg-transparent"
-        } w-6/12`}
+        className={`
+        w-6/12`}
       >
         <ul className={`sm:${styles.flexBetween} hidden h-full px-2`}>
           {navLinks.map((navLink) => (

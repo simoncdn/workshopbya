@@ -2,7 +2,6 @@ import styles from "@/styles/index";
 import Image from "next/image";
 import stain from "../../assets/stain.svg";
 import LeftPart from "./LeftPart";
-import RightPart from "./RightPart";
 
 export default function Hero() {
   return (
@@ -14,7 +13,6 @@ export default function Hero() {
       </div>
 
       <LeftPart />
-      <RightPart />
     </section>
   );
 }

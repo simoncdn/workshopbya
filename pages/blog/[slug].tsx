@@ -6,8 +6,6 @@ import Button from "@/components/reusable-ui/Button";
 import Head from "next/head";
 
 export default function Article({ post }: any) {
-  console.log(post);
-
   return (
     <>
       <Head>
