@@ -148,7 +148,7 @@ export const packs = [
     ],
   },
   {
-    title: "Fortfait professionnel",
+    title: "Forfait professionnel",
     price: "600",
     subtitle: "Gestion de trois Réseau social",
     cardColor: "grey",
@@ -163,6 +163,7 @@ export const packs = [
       "Création d'un grid planner",
       "Preset sur mesure",
       "Mise en place d'une stratégie social media",
+      "Gestion de + de trois réseaux sociaux",
     ],
   },
   {
@@ -172,7 +173,7 @@ export const packs = [
     cardColor: "tertiary",
     textColor: "primary",
     animationDelay: 2.2,
-    description: ["Contactez moi pour discuter ensemble de votre projet"],
+    description: ["Contactez-moi pour discuter ensemble de votre projet"],
   },
 ];
 
